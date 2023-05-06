@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keneth Finder</title>
+	<script>
+		function findKeneth() {
+			document.getElementById("keneth").innerHTML = '';
+			document.getElementById("loader").style.display = 'block';
+			setTimeout(function() {
+				document.getElementById("loader").style.display = 'none';
+				document.getElementById("keneth").innerHTML = '<iframe srcdoc="<!DOCTYPE html><html><head><title>404 Not Found</title><style>body {background-color: #f4f4f4;font-family: Arial, sans-serif;font-size: 16px;line-height: 1.5;color: #333;}h1 {font-size: 48px;margin: 0;padding: 50px 0;text-align: center;}p {margin: 0;padding: 20px 0;text-align: center;}a {color: #0077cc;}</style></head><body><h1>404 Keneth Not Found</h1><p>The person you are looking for isn\'t available or has been too busy.</p><p>Please try again later. If you continue to experience problems, please <a href=\'contact.html\'>contact him</a>.</p></body></html>"></iframe>';
+				setTimeout(function() {
+					document.getElementById("keneth").innerHTML = '';
+				}, 5000);
+			}, 3000);
+			document.getElementById("finder").style.display = 'none';
+		}
+	</script>
+	<style>
+		body {
+			background-color: #f4f4f4;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #333;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		h1 {
+			font-size: 48px;
+			margin: 0;
+			padding: 50px 0;
+			text-align: center;
+		}
+		button {
+			font-size: 24px;
+			padding: 16px 32px;
+			background-color: #0077cc;
+			color: #fff;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+		}
+		iframe {
+			border: none;
+			width: 100%;
+			height: 400px;
+		}
+		.loader {
+			display: none;
+			border: 16px solid #f3f3f3;
+			border-top: 16px solid #0077cc;
+			border-radius: 50%;
+			width: 120px;
+			height: 120px;
+			animation: spin 2s linear infinite;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+	</style>
+</head>
+<body>
+	<div id="finder">
+		<h1>Keneth Finder</h1>
+		<button onclick="findKeneth()">Find Keneth</button>
+	</div>
+	<div id="loader" class="loader"></div>
+	<div id="keneth"></div>
+</body>
+</html>
